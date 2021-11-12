@@ -13,17 +13,19 @@
     "body-parser": "^1.15.0",
     "cookie-parser": "^1.4.0",
     "debug": "^2.2.0",
+    "ejs": "^3.1.6",
     "express": "^4.14.0",
     "morgan": "^1.9.1",
-    "ejs": "^3.1.6",
-    "serve-favicon": "^2.3.0",
-    "natives": "^1.1.6"
+    "natives": "^1.1.6",
+    "serve-favicon": "^2.3.0"
   },
   "engines": {
     "node": "~6.10.x"
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
-    "nodemon": "^2.0.15"
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.1.6"
   }
 }
