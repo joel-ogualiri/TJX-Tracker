@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon app"
+    "start": "nodemon app",
+    "test": "jest --coverage --watchAll"
   },
   "description": "nodejs-webapp-express",
   "author": {
