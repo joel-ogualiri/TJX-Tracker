@@ -1,0 +1,299 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/TestDoc18/Capstone/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : {
+    "/customers" : {
+      "get" : {
+        "summary" : "returns the list of customers in the database",
+        "responses" : {
+          "200" : {
+            "description" : "A JSON array of products",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/customers/{id}" : {
+      "get" : {
+        "summary" : "Returns a user by ID.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Unique identification integer associated with each customer.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "A user object.",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "A user with the specified ID was not found."
+          },
+          "default" : {
+            "description" : "Unexpected error"
+          }
+        }
+      }
+    },
+    "/products" : {
+      "get" : {
+        "summary" : "Returns all the products.",
+        "description" : "Returns all the products in the database.",
+        "responses" : {
+          "200" : {
+            "description" : "A JSON array of products",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200_2"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/products/{id}" : {
+      "get" : {
+        "summary" : "Returns a specific product.",
+        "description" : "Returns a specific product based on the provided id.",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "Unique identification integer associated with each customer.",
+          "required" : true,
+          "style" : "simple",
+          "explode" : false,
+          "schema" : {
+            "minimum" : 1,
+            "type" : "integer",
+            "format" : "int64"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/inline_response_200_3"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "A user with the specified ID was not found."
+          },
+          "default" : {
+            "description" : "Unexpected error"
+          }
+        }
+      }
+    },
+    "/orders" : {
+      "get" : {
+        "summary" : "Returns all the orderss.",
+        "description" : "Returns all the orders in the database.",
+        "responses" : {
+          "200" : {
+            "description" : "A JSON array of orders",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/inline_response_200_4"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "inline_response_200" : {
+        "type" : "object",
+        "properties" : {
+          "customer_id" : {
+            "type" : "integer"
+          },
+          "first_name" : {
+            "type" : "integer"
+          },
+          "last_name" : {
+            "type" : "string"
+          },
+          "phone" : {
+            "type" : "integer"
+          },
+          "email" : {
+            "type" : "integer"
+          },
+          "customer_notes" : {
+            "type" : "string"
+          },
+          "address" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_1" : {
+        "type" : "object",
+        "properties" : {
+          "customer_id" : {
+            "type" : "integer",
+            "format" : "int64",
+            "example" : 200060
+          },
+          "first_name" : {
+            "type" : "string",
+            "example" : "john"
+          },
+          "last_name" : {
+            "type" : "string",
+            "example" : "doe"
+          },
+          "phone" : {
+            "type" : "integer",
+            "format" : "int64",
+            "example" : 7505667845
+          },
+          "email" : {
+            "type" : "string",
+            "example" : "customeremail@gmail.com"
+          },
+          "customer_notes" : {
+            "type" : "string",
+            "example" : "customer is awesome"
+          },
+          "address" : {
+            "type" : "string",
+            "example" : "198 bay street"
+          }
+        }
+      },
+      "inline_response_200_2" : {
+        "type" : "object",
+        "properties" : {
+          "product_id" : {
+            "type" : "string"
+          },
+          "product_SKU" : {
+            "type" : "integer"
+          },
+          "product_price" : {
+            "type" : "integer"
+          },
+          "product_name" : {
+            "type" : "string"
+          },
+          "product_quantity" : {
+            "type" : "integer"
+          },
+          "product_description" : {
+            "type" : "string"
+          },
+          "image_url" : {
+            "type" : "string"
+          }
+        }
+      },
+      "inline_response_200_3" : {
+        "type" : "object",
+        "properties" : {
+          "product_id" : {
+            "type" : "string",
+            "example" : "P777"
+          },
+          "product_SKU" : {
+            "type" : "integer",
+            "example" : 12345678
+          },
+          "product_price" : {
+            "type" : "integer",
+            "example" : 20
+          },
+          "product_name" : {
+            "type" : "string",
+            "example" : "pink sweater"
+          },
+          "product_quantity" : {
+            "type" : "integer",
+            "example" : 50
+          },
+          "product_description" : {
+            "type" : "string",
+            "example" : "pink medium sweaters"
+          },
+          "image_url" : {
+            "type" : "string",
+            "example" : "tjx.com/pinksweater"
+          }
+        }
+      },
+      "inline_response_200_4" : {
+        "type" : "object",
+        "properties" : {
+          "order_id" : {
+            "type" : "string",
+            "example" : "349201"
+          },
+          "customer_id" : {
+            "type" : "integer",
+            "example" : 200060
+          },
+          "order_status_code" : {
+            "type" : "integer"
+          },
+          "datetime_order_placed" : {
+            "type" : "string",
+            "example" : "2021-11-09"
+          },
+          "total_order_price" : {
+            "type" : "integer",
+            "example" : 2500
+          },
+          "order_notes" : {
+            "type" : "string",
+            "example" : "pink sweaters"
+          }
+        }
+      }
+    }
+  }
+}
